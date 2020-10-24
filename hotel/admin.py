@@ -1,6 +1,17 @@
 from django.contrib import admin
-from .models import Room, Reservation
+from .models import Room, Reservation, Location
 # Register your models here.
+
+
+class LocationAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+        'location',
+        'country',
+    )
+    readonly_fields = ('pk',)
+
+    ordering = ('pk',)
 
 
 class RoomAdmin(admin.ModelAdmin):
@@ -31,5 +42,7 @@ class ReservationAdmin(admin.ModelAdmin):
 
     ordering = ('date_posted',)
 
+
+admin.site.register(Location, LocationAdmin)
 admin.site.register(Room, RoomAdmin)
 admin.site.register(Reservation, ReservationAdmin)

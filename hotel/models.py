@@ -6,6 +6,16 @@ from django.conf import settings
 # Create your models here.
 
 
+class Location(models.Model):
+    #location_id,location_name,,location
+    name = models.CharField(max_length=30, default="podvisbor")
+    location = models.CharField(max_length=50)
+    country = models.CharField(max_length=50, default="Bulgaria")
+
+    def __str__(self):
+        return self.name
+
+
 class Room(models.Model):
     ROOM_STATUS = ( 
     ("1", "available"), 
