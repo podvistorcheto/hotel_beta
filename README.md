@@ -44,3 +44,8 @@ We continually tweak and adjust this template to help give you the best experien
 --------
 
 Happy coding!
+
+
+to copy recursively the allauth packages:
+
+cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates/allauth/
