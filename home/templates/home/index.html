@@ -25,14 +25,14 @@
 								<!--filter location-->
 							        {% for location in all_location %}
 							             <option value={{location_id}}>{{location.location}}</option>
-							         {% endfor %}    
+							        {% endfor %}    
 				            </select>
 						</div>
 						<div class="col-lg-2">
-							<input class="form-control mr-sm-2" type="date" placeholder="Check in" name="cin" aria-label="Search" required="True">
+							<input class="form-control mr-sm-2" placeholder="Check in" name="cin" id="id_check_in" aria-label="Search" required="True">
 				                </div>
 							<div class="col-lg-2">
-								<input class="form-control mr-sm-2" type="date" placeholder="Check out" name="cout" aria-label="Search" required="True">
+								<input class="form-control mr-sm-2" placeholder="Check out" id="id_check_out" name="cout" aria-label="Search" required="True">
 				                </div>
 								<div class="col-lg-2">
 									<input class="form-control mr-sm-2 py-3" type="number" placeholder="Guests" name="capacity" aria-label="Search" required="True">

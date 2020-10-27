@@ -9,6 +9,7 @@ import datetime
 def index(request):
     return render(request, "home/index.html")
 
+
 ''' Initial search page '''
 def searchpage(request):
     all_location = Location.objects.all()
