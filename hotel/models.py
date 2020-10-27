@@ -8,12 +8,11 @@ from django.conf import settings
 
 class Location(models.Model):
     #location_id,location_name,,location
-    name = models.CharField(max_length=30, default="podvisbor")
     location = models.CharField(max_length=50)
     country = models.CharField(max_length=50, default="Bulgaria")
 
     def __str__(self):
-        return self.name
+        return self.location
 
 
 class Room(models.Model):
@@ -22,17 +21,15 @@ class Room(models.Model):
     ("2", "not available"),    
     ) 
 
-    ROOM_TYPE = ( 
-    ("1", "APARTMENT"), 
-    ("2", "VILLA BOR"),
-    ("3","VILLA ASPEN"),
-    ("4", "DOUBLE ROOM"), 
-    ("5", "DELUXE SUITE"),
-    ("6","VILLA ELA"),
+    ROOM_TYPE = (  
+    ("1", "VILLA BOR"),
+    ("2","VILLA ASPEN"),
+    ("3","VILLA ELA"),
     )
     #type,no_of_rooms,capacity,prices,Hotel
     room_type = models.CharField(max_length=50, choices=ROOM_TYPE)
     capacity = models.IntegerField()
+    hotel = models.ForeignKey(Location, on_delete = models.CASCADE, null=True)
     price = models.DecimalField(max_digits=6, decimal_places=2, null=True)
     size = models.IntegerField(null=True)
     status = models.CharField(choices=ROOM_STATUS, max_length=15)
@@ -59,5 +56,3 @@ class Reservation(models.Model):
 
     def __str__(self):
         return self.user.room.check_in.check_out
-
-

@@ -5,7 +5,6 @@ from .models import Room, Reservation, Location
 
 class LocationAdmin(admin.ModelAdmin):
     list_display = (
-        'name',
         'location',
         'country',
     )
@@ -19,6 +18,7 @@ class RoomAdmin(admin.ModelAdmin):
         'room_type',
         'size',
         'price',
+        'hotel',
         'capacity',
         'roomnumber',
     )
