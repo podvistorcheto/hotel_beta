@@ -6,6 +6,9 @@ from django.contrib.auth.models import User
 import datetime
 
 
+def index(request):
+    return render(request, "home/index.html")
+
 ''' Initial search page '''
 def searchpage(request):
     all_location = Location.objects.all()
@@ -35,6 +38,6 @@ def searchpage(request):
     
     else:
         data = {'all_location': all_location}
-        response = render(request, 'room_results.html', data)
+        response = render(request, 'home/index.html', data)
     return HttpResponse(response)
 

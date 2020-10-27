@@ -22,9 +22,9 @@ class Room(models.Model):
     ) 
 
     ROOM_TYPE = (  
-    ("1", "VILLA BOR"),
-    ("2","VILLA ASPEN"),
-    ("3","VILLA ELA"),
+    ("Vila_Bor ", "VILLA BOR"),
+    ("Vila Aspen","VILLA ASPEN"),
+    ("Vila Ela","VILLA ELA"),
     )
     #type,no_of_rooms,capacity,prices,Hotel
     room_type = models.CharField(max_length=50, choices=ROOM_TYPE)
@@ -55,4 +55,4 @@ class Reservation(models.Model):
     booking_id = models.CharField(max_length=10, default="null")
 
     def __str__(self):
-        return self.user.room.check_in.check_out
+        return self.booking_id
